@@ -41,7 +41,7 @@ public class ResourceServerConfig implements ResourceServerConfigurer {
 		http.authorizeRequests()
 				.antMatchers("/login**").permitAll()
 				//.antMatchers("/api/security/oauth/**").permitAll()
-				.antMatchers("/api/security/**").permitAll()
+				//.antMatchers("/api/security/**").permitAll()
 				.antMatchers("/api/socialweb/images/**").permitAll()
 				.antMatchers("/api/socialweb/publicaciones/uploads/img/**").permitAll()
 				.antMatchers("/api/socialweb-reclamaciones/js/**","/api/socialweb-reclamaciones/css/**","/api/socialweb-reclamaciones/img/**","/api/socialweb-reclamaciones/uploads/**").permitAll()
