@@ -73,7 +73,7 @@ public class ResourceServerConfig implements ResourceServerConfigurer {
 
 		corsConfiguration.setAllowCredentials(true);
 		corsConfiguration.setAllowedMethods(Arrays.asList("POST", "GET", "PUT", "DELETE", "OPTIONS"));
-		corsConfiguration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "Access-Control-Allow-Origin"));
+		corsConfiguration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
 		//corsConfiguration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "content-type", "x-requested-with", "Access-Control-Allow-Origin", "Access-Control-Allow-Methods", "Access-Control-Allow-Credentials","Access-Control-Allow-Headers", "x-auth-token", "x-app-id", "Origin","Accept", "X-Requested-With", "Access-Control-Request-Method", "Access-Control-Request-Headers"));
         
 
