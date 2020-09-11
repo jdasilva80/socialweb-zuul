@@ -40,13 +40,15 @@ public class ResourceServerConfig implements ResourceServerConfigurer {
         //protección de endpoints.
 		http.authorizeRequests()
 				.antMatchers("/login**").permitAll()
-				//.antMatchers("/api/security/oauth/**").permitAll()
-				//.antMatchers("/api/security/**").permitAll()
+				.antMatchers("/api/security/**").permitAll()
+				.antMatchers("/api/socialweb-reclamaciones/**").permitAll()
+				.antMatchers("/api/socialweb-productos/**").permitAll()
+				.antMatchers("/api/socialweb-tienda/**").permitAll()
 				.antMatchers("/api/socialweb/images/**").permitAll()
 				.antMatchers("/api/socialweb/publicaciones/uploads/img/**").permitAll()
 				.antMatchers("/api/socialweb-reclamaciones/js/**","/api/socialweb-reclamaciones/css/**","/api/socialweb-reclamaciones/img/**","/api/socialweb-reclamaciones/uploads/**").permitAll()
 				.antMatchers("/api/socialweb-productos/js/**","/api/socialweb-productos/css/**","/api/socialweb-productos/img/**","/api/socialweb-productos/uploads/**").permitAll()
-				.antMatchers("/api/socialweb-tienda/js/**","/api/socialweb-tienda/css/**","/api/socialweb-tienda/img/**","/api/socialweb-tienda/uploads/**").permitAll()
+				.antMatchers("/api/socialweb-tienda/js/**","/api/socialweb-tienda/css/**","/api/socialweb-tienda/img/**","/api/socialweb-tienda/uploads/**").permitAll()				
 //				.antMatchers(HttpMethod.GET, "/api/socialweb/**", "/api/socialweb-usuarios/usuarios").hasAnyRole("USER","ADMIN")
 //				.antMatchers(HttpMethod.POST, "/api/socialweb/**", "/api/socialweb-usuarios/usuarios").hasAnyRole("ADMIN")
 //				.antMatchers(HttpMethod.PUT, "/api/socialweb/**", "/api/socialweb-usuarios/usuarios").hasAnyRole("ADMIN")
@@ -55,9 +57,6 @@ public class ResourceServerConfig implements ResourceServerConfigurer {
 				.antMatchers(HttpMethod.POST, "/api/socialweb/**", "/api/socialweb-usuarios/**").permitAll()
 				.antMatchers(HttpMethod.PUT, "/api/socialweb/**", "/api/socialweb-usuarios/**").permitAll()
 				.antMatchers(HttpMethod.DELETE, "/api/socialweb/**", "/api/socialweb-usuarios/**").permitAll()
-				.antMatchers("/api/socialweb-reclamaciones/**").permitAll()
-				.antMatchers("/api/socialweb-productos/**").permitAll()
-				.antMatchers("/api/socialweb-tienda/**").permitAll()
 				.anyRequest().authenticated()
 				.and().cors()// aqui se aplica la configuracion de cors solo a spring security.
 				.configurationSource(configurationSource());
